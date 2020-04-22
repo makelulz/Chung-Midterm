@@ -12,8 +12,30 @@ public class QTESystem : MonoBehaviour
     public int WaitingForKey;
     public int CorrectKey;
     public int CountingDown;
-    private string badResponse = "Take me to 123 Business Lane";
-    private string goodResponse = "Good Morning Sir, take me to 123 Business lane please.";
+    public int pass = 0;
+
+    public int passCount = 0;
+    public int failCount = 0;
+
+    public GameObject dialogueSystem;
+    DialogueSystem DialogueSystem;
+
+    public GameObject nextButton;
+
+    private string badResponse1 = "Take me to 123 Business Lane";
+    private string badResponse2 = "Financial work.";
+    private string badResponse3 = "Cool.";
+    private string goodResponse1 = "Good Morning Sir, take me to 123 Business lane please.";
+    private string goodResponse2 = "I work as a Financial Advisor. I help people manage their finances as well as their stocks.";
+    private string goodResponse3 = "Oh nice man! I went to school there too! We have a lot in common.";
+
+
+    private void Awake()
+    {
+        dialogueSystem = GameObject.Find("DialogueSystem");
+        DialogueSystem = dialogueSystem.GetComponent<DialogueSystem>();
+        nextButton = GameObject.Find("Continue Dialogue");
+    }
 
     private void Update()
     {
@@ -100,7 +122,25 @@ public class QTESystem : MonoBehaviour
         {
             CountingDown = 2;
             PassBox.GetComponent<Text>().text = "Pass!";
-            playerText.text = goodResponse;
+            pass = 1;
+            passCount += 1;
+            DialogueSystem.TurnOnNextButton();
+            if (DialogueSystem.interaction == 1)
+            {
+                playerText.text = goodResponse1;
+               
+            }
+            else if (DialogueSystem.interaction == 2)
+            {
+                playerText.text = goodResponse2;
+                //  nextButton.SetActive(true);
+                
+            }
+            else if (DialogueSystem.interaction == 3)
+            {
+                playerText.text = goodResponse3;
+                
+            }
             yield return new WaitForSeconds(1.5f);
             CorrectKey = 0;
             PassBox.GetComponent<Text>().text = "";
@@ -115,7 +155,26 @@ public class QTESystem : MonoBehaviour
         {
             CountingDown = 2;
             PassBox.GetComponent<Text>().text = "FAIL!";
-            playerText.text = badResponse;
+            DialogueSystem.TurnOnNextButton();
+            pass = 2;
+            failCount += 1;
+            if (DialogueSystem.interaction == 1)
+            {
+                playerText.text = badResponse1;
+                
+            }
+            else if (DialogueSystem.interaction== 2)
+            {
+                playerText.text = badResponse2;
+                
+            }
+
+            else if (DialogueSystem.interaction == 3)
+            {
+                playerText.text = badResponse3;
+                
+            }
+
             yield return new WaitForSeconds(1.5f);
             CorrectKey = 0;
             PassBox.GetComponent<Text>().text = "";
@@ -135,7 +194,25 @@ public class QTESystem : MonoBehaviour
             QTEGen = 4;
             CountingDown = 2;
             PassBox.GetComponent<Text>().text = "FAIL!";
-            playerText.text = badResponse;
+            DialogueSystem.TurnOnNextButton();
+            pass = 2;
+            failCount += 1;
+            if (DialogueSystem.interaction == 1)
+            {
+                playerText.text = badResponse1;
+                
+            }
+            else if (DialogueSystem.interaction == 2)
+            {
+                playerText.text = badResponse2;
+                
+            }
+
+            else if (DialogueSystem.interaction == 3)
+            {
+                playerText.text = badResponse3;
+                
+            }
             yield return new WaitForSeconds(1.5f);
             CorrectKey = 0;
             PassBox.GetComponent<Text>().text = "";
