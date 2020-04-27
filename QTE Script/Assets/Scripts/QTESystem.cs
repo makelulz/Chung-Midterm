@@ -122,6 +122,7 @@ public class QTESystem : MonoBehaviour
         {
             CountingDown = 2;
             PassBox.GetComponent<Text>().text = "Pass!";
+            PassBox.GetComponent<Text>().color = Color.green;
             pass = 1;
             passCount += 1;
             DialogueSystem.TurnOnNextButton();
@@ -155,6 +156,7 @@ public class QTESystem : MonoBehaviour
         {
             CountingDown = 2;
             PassBox.GetComponent<Text>().text = "FAIL!";
+            PassBox.GetComponent<Text>().color = Color.red;
             DialogueSystem.TurnOnNextButton();
             pass = 2;
             failCount += 1;
@@ -194,6 +196,7 @@ public class QTESystem : MonoBehaviour
             QTEGen = 4;
             CountingDown = 2;
             PassBox.GetComponent<Text>().text = "FAIL!";
+            PassBox.GetComponent<Text>().color = Color.red;
             DialogueSystem.TurnOnNextButton();
             pass = 2;
             failCount += 1;
