@@ -208,6 +208,7 @@ GameObject:
   m_Component:
   - component: {fileID: 162933085}
   - component: {fileID: 162933084}
+  - component: {fileID: 162933086}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -279,6 +280,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &162933086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162933083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09718851ab87003438898e92773f86e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Player
+    sentences:
+    - No, I do not mind
+    - 
+    - 
+    - 
+  dialogueSystem: {fileID: 2134134231}
 --- !u!1 &372889346
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,6 +416,7 @@ GameObject:
   m_Component:
   - component: {fileID: 444954739}
   - component: {fileID: 444954738}
+  - component: {fileID: 444954740}
   m_Layer: 0
   m_Name: Janitor
   m_TagString: Untagged
@@ -466,6 +488,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &444954740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444954737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09718851ab87003438898e92773f86e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name: Janitor
+    sentences:
+    - Excuse Sir, I need to this conference room now. I hope you do not mind the
+      noise.
+    - 
+    - 
+    - 
+  dialogueSystem: {fileID: 0}
 --- !u!1 &542034043
 GameObject:
   m_ObjectHideFlags: 0
@@ -691,7 +734,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 651200769}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5336592cc554bbb4b80af92b178ae9f9, type: 3}
+  m_Script: {fileID: 11500000, guid: a161f7f80fac37c4983d13318a0116d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   DisplayBox: {fileID: 0}
@@ -1225,8 +1268,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1045714893}
-        m_MethodName: 
+      - m_Target: {fileID: 1045714895}
+        m_MethodName: TriggerDialogue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2526,7 +2569,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2134134231}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 350bd77bf8f76bc4284ca6017c1235d3, type: 3}
+  m_Script: {fileID: 11500000, guid: c6d309d646848d048877c1e15e4f99b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 0}
